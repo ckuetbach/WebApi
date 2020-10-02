@@ -4,7 +4,7 @@
     {
         public Movie Movie { get; set; }
 
-        public int MovieId { get; set; }
+        public string MovieId { get; set; }
 
         public string FirstName { get; set; }
 

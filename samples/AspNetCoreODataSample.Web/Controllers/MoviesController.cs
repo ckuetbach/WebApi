@@ -24,6 +24,7 @@ namespace AspNetCoreODataSample.Web.Controllers
             {
                 Movie conanMovie = new Movie
                 {
+                    ID = "a/b",
                     Title = "Conan",
                     ReleaseDate = new DateTimeOffset(new DateTime(2017, 3, 3)),
                     Genre = Genre.Comedy,
@@ -31,6 +32,7 @@ namespace AspNetCoreODataSample.Web.Controllers
                 };
                 Movie dieHardMovie = new Movie
                 {
+                    ID = "a%30b",
                     Title = "Die Hard",
                     ReleaseDate = new DateTimeOffset(new DateTime(2014, 1, 3)),
                     Genre = Genre.Comedy,
@@ -60,7 +62,7 @@ namespace AspNetCoreODataSample.Web.Controllers
             {
                 new Movie
                 {
-                    ID = 1,
+                    ID = "1",
                     Title = "Conan",
                     ReleaseDate = new DateTimeOffset(new DateTime(2018, 3, 3)),
                     Genre = Genre.Comedy,
@@ -70,19 +72,19 @@ namespace AspNetCoreODataSample.Web.Controllers
                         {
                             FirstName = "Arnold",
                             LastName = "Schwarzenegger",
-                            MovieId = 1
+                            MovieId = "1"
                         },
                         new MovieStar
                         {
                             FirstName = "Jackie",
                             LastName = "Chan",
-                            MovieId = 1
+                            MovieId = "1"
                         }
                     }
                 },
                 new Movie
                 {
-                    ID = 2,
+                    ID = "2",
                     Title = "James",
                     ReleaseDate = new DateTimeOffset(new DateTime(2017, 3, 3)),
                     Genre = Genre.Adult,
@@ -92,7 +94,7 @@ namespace AspNetCoreODataSample.Web.Controllers
                         {
                             FirstName = "Bruce",
                             LastName = "Willis",
-                            MovieId = 2
+                            MovieId = "2"
                         }
                     }
                 }
@@ -113,7 +115,7 @@ namespace AspNetCoreODataSample.Web.Controllers
         }
 
         [EnableQuery]
-        public IActionResult Get(int key)
+        public IActionResult Get(string key)
         {
             Movie m;
             if (Request.Path.Value.Contains("efcore"))

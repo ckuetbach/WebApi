@@ -24,6 +24,7 @@ namespace AspNetCore3xODataSample.Web.Controllers
                 {
                     new Customer
                     {
+                        Id = "a%30b",
                         Name = "Jonier",
                         HomeAddress = new Address { City = "Redmond", Street = "156 AVE NE"},
                         FavoriteAddresses = new List<Address>
@@ -36,6 +37,7 @@ namespace AspNetCore3xODataSample.Web.Controllers
                     },
                     new Customer
                     {
+                        Id = "a/b",
                         Name = "Sam",
                         HomeAddress = new Address { City = "Bellevue", Street = "Main St NE"},
                         FavoriteAddresses = new List<Address>
@@ -48,6 +50,7 @@ namespace AspNetCore3xODataSample.Web.Controllers
                     },
                     new Customer
                     {
+                        Id = "peter",
                         Name = "Peter",
                         HomeAddress = new Address {  City = "Hollewye", Street = "Main St NE"},
                         FavoriteAddresses = new List<Address>
@@ -82,7 +85,7 @@ namespace AspNetCore3xODataSample.Web.Controllers
         }
 
         [EnableQuery]
-        public IActionResult Get(int key)
+        public IActionResult Get(string key)
         {
             return Ok(_context.Customers.FirstOrDefault(c => c.Id == key));
         }

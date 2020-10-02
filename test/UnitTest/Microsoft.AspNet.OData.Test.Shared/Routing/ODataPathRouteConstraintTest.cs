@@ -59,6 +59,10 @@ namespace Microsoft.AspNet.OData.Test.Routing
             { "some%3flower%23escapes" },                       // "some?lower#escapes"
             { "" },
             { "odata" },
+            { "odata%28a" },                                    // "odata(a"
+            { "odata%29b" },                                    // "odata)b"
+            { "odata%30c" },                                    // "odata0c"
+            { "odata%31d" },                                    // "odata1d"
             { "some%20spaces" },                                // "some spaces"
             { "_some+plus+signs_" },
             { "some(sub)and&other=delims" },

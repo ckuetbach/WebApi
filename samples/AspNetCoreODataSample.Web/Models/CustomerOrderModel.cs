@@ -18,7 +18,7 @@ namespace AspNetCoreODataSample.Web.Models
 
     public class Customer
     {
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
 
         public string Name { get; set; }
 

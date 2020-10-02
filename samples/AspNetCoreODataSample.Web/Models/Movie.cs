@@ -8,7 +8,7 @@ namespace AspNetCoreODataSample.Web.Models
 {
     public class Movie
     {
-        public int ID { get; set; }
+        public string ID { get; set; }
 
         public List<MovieStar> Stars { get; set; }
 

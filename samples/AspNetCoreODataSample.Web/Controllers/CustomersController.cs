@@ -19,7 +19,7 @@ namespace AspNetCoreODataSample.Web.Controllers
             {
                 new Customer
                 {
-                    CustomerId = 1,
+                    CustomerId = "1",
                     Name = "John",
                     HomeAddress = new Address
                     {
@@ -43,7 +43,7 @@ namespace AspNetCoreODataSample.Web.Controllers
                 },
                 new VipCustomer
                 {
-                    CustomerId = 2,
+                    CustomerId = "2",
                     Name = "Smith",
                     HomeAddress = new Address
                     {
@@ -81,7 +81,7 @@ namespace AspNetCoreODataSample.Web.Controllers
                 },
                 new Customer
                 {
-                    CustomerId = 3,
+                    CustomerId = "3",
                     Name = "Ketti",
                     HomeAddress = new Address
                     {
@@ -106,7 +106,7 @@ namespace AspNetCoreODataSample.Web.Controllers
                 // null, // It's not allowed in ResourceSet Serializer
                 new VipCustomer
                 {
-                    CustomerId = 5,
+                    CustomerId = "5",
                     Name = "Peter",
                     HomeAddress = new Address
                     {
@@ -161,7 +161,7 @@ namespace AspNetCoreODataSample.Web.Controllers
         }
 
         [EnableQuery]
-        public IActionResult Get(int key)
+        public IActionResult Get(string key)
         {
             Customer c = Customers.FirstOrDefault(k => k.CustomerId == key);
             if (c == null)
